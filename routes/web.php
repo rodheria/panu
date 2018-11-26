@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
+    
+    Route::get('/', 'PostController@index');
+    Route::get('/create', 'PostController@create');
+    Route::post('/create', 'PostController@store');
+    Route::patch('/edit/{id}', 'PostController@update');
+    Route::get('/{id}', 'PostController@show');
+    Route::get('/{id}/edit', 'PostController@edit');
+    Route::delete('/delete/{id}', 'PostController@destroy');
+});

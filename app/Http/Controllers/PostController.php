@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+       $posts = Post::all();
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
@@ -24,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+         return view('posts.create')->with('categories', Category::all());
     }
 
     /**
@@ -35,7 +36,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'title' => 'required',
+            'category_id' => 'required',
+            'content' => 'required',
+            'filepath' => 'mimetypes:application/zip'
+        ];
+
+        $messages = [
+            'required' => 'el campo :attribute es requerido'
+        ];
+       
+
+        $this->validate($request, $rules, $messages);
+
+        $post = new Post($request->all());
+        
+        if($request->file('filepath') !== null) {
+            $file = $request->file('filepath')->store('uploads');
+            $post->filepath = $file;
+        }
+        
+        $post->save();
+
+        return redirect('/posts/' . $post->id);
+
+    
     }
 
     /**
@@ -44,9 +70,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**
@@ -55,9 +82,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+         $post = Post::find($id);
+        $categories = Category::all();
+        return view('posts.edit')->with('post', $post)->with('categories', $categories);
     }
 
     /**
@@ -67,9 +96,17 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->category_id = $request->input('category_id');
+        $post->filepath = $request->input('filepath');
+
+        $post->save();
+        return redirect('/posts/' . $id);
     }
 
     /**
@@ -78,8 +115,9 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return redirect('/posts');
     }
 }
