@@ -15,12 +15,12 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
     
