@@ -62,7 +62,7 @@
                         <span class="nav-link text-light">Sesion iniciada como: <a class="font-weight-bold text-white" href="#PERFIL">{{Auth::user()->name}}</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#LOGOUT">Cerrar sesión</a>
+                        <a class="nav-link text-light" href="{{route('logout')}}">Cerrar sesión</a>
                     </li>
                 @else
                     <li class="nav-item {{ Request::is('login') ? 'active' : '' }}">
