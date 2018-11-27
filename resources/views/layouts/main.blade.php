@@ -38,45 +38,38 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
-              <a class="nav-link" href="{{route('home')}}">Inicio
-              </a>
-            </li>
-            <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
-              <a class="nav-link" href="{{route('about')}}">Quienes somos</a>
-            </li>
-            <li class="nav-item {{ Request::is('faq') ? 'active' : '' }}">
-              <a class="nav-link" href="{{route('faq')}}">F.A.Q.</a>
-            </li>
-            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-              <a class="nav-link mr-4" href="#">Contacto</a>
-            </li>
-
-            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-              <a class="nav-link font-weight-bold" href="#">Iniciar sesión</a>
-            </li>
-            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-              <a class="nav-link font-weight-bold" href="#">Registrarse</a>
-            </li>
-
-            {{-- @if (!Route::has('login'))
-                @auth
-                    <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{route('login')}}">Iniciar sesión</a>
+        <div class="collapse navbar-collapse ml-5" id="navbarResponsive">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('home')}}">Inicio</a>
+                </li>
+                <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('about')}}">Quienes somos</a>
+                </li>
+                <li class="nav-item {{ Request::is('faq') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('faq')}}">F.A.Q.</a>
+                </li>
+                <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                @if(Auth::check())
+                    <li class="nav-item {{ Request::is('register') ? 'active' : '' }}">
+                        <span class="nav-link">Sesion iniciada como: <a class="font-weight-bold" href="#PERFIL">{{Auth::user()->name}}</a></span>
                     </li>
-
-                    @if (Route::has('register'))
-                        <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{route('register')}}">Registrarse</a>
-                        </li>
-                    @endif
-                @endauth
-            @else
-                <a href="#">Logout</a>
-            @endif --}}
-          </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#LOGOUT">Cerrar sesión</a>
+                    </li>
+                @else
+                    <li class="nav-item {{ Request::is('login') ? 'active' : '' }}">
+                        <a class="nav-link font-weight-bold" href="{{route('login')}}">Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item {{ Request::is('register') ? 'active' : '' }}">
+                        <a class="nav-link font-weight-bold" href="{{route('register')}}">Registrarse</a>
+                    </li>
+                @endif
+            </ul>
         </div>
       </div>
     </nav>
