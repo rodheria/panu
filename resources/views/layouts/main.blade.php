@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
     <title>{{ config('app.name', 'Panu') }}</title>
 
@@ -37,6 +37,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
@@ -50,8 +51,31 @@
               <a class="nav-link" href="{{route('faq')}}">F.A.Q.</a>
             </li>
             <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-              <a class="nav-link" href="{{route('contact')}}">Contacto</a>
+              <a class="nav-link mr-4" href="#">Contacto</a>
             </li>
+
+            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+              <a class="nav-link font-weight-bold" href="#">Iniciar sesión</a>
+            </li>
+            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+              <a class="nav-link font-weight-bold" href="#">Registrarse</a>
+            </li>
+
+            {{-- @if (!Route::has('login'))
+                @auth
+                    <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{route('login')}}">Iniciar sesión</a>
+                    </li>
+
+                    @if (Route::has('register'))
+                        <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{route('register')}}">Registrarse</a>
+                        </li>
+                    @endif
+                @endauth
+            @else
+                <a href="#">Logout</a>
+            @endif --}}
           </ul>
         </div>
       </div>
