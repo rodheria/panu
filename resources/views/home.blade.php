@@ -21,7 +21,7 @@
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
             <h4 class="card-title">Encontrá tu mascota perdida</h4>
-            <p class="card-text">Recibiras actualizaciones por e-mail sobre tus busquedas activas</p>
+            <p class="card-text">Recibiras actualizaciones por email sobre tus busquedas activas</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Find Out More!</a>

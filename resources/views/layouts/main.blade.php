@@ -48,10 +48,7 @@
               <a class="nav-link" href="{{route('about')}}">Quienes somos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">F.A.Q.</a>
+              <a class="nav-link" href="{{route('faq')}}">F.A.Q.</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contacto</a>
