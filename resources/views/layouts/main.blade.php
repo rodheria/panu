@@ -23,6 +23,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    {{-- IONICONS --}}
+    <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
@@ -56,10 +59,10 @@
             <ul class="navbar-nav ml-auto">
                 @if(Auth::check())
                     <li class="nav-item {{ Request::is('register') ? 'active' : '' }}">
-                        <span class="nav-link">Sesion iniciada como: <a class="font-weight-bold" href="#PERFIL">{{Auth::user()->name}}</a></span>
+                        <span class="nav-link text-light">Sesion iniciada como: <a class="font-weight-bold text-white" href="#PERFIL">{{Auth::user()->name}}</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#LOGOUT">Cerrar sesión</a>
+                        <a class="nav-link text-light" href="#LOGOUT">Cerrar sesión</a>
                     </li>
                 @else
                     <li class="nav-item {{ Request::is('login') ? 'active' : '' }}">
@@ -84,20 +87,24 @@
       <!-- /.container -->
     </footer> --}}
 
-    <footer class="footer py-5 bg-dark">
+    <footer class="footer pt-4 mt-4 bg-dark col-xs-12">
         <div class="container">
             <div class="row">
-                <ul class="footerNav col-auto list-unstyled col-xs-12">
+                <ul class="list-unstyled col-6 col-xs-12">
                     <li><a href="index.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Inicio</i></a></li>
                     <li><a href="login.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Iniciar sesión</a></li>
                     <li><a href="registro.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Registrarse</a></li>
                     <li><a href="faq.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> F.A.Q</a></li>
                 </ul>
-                <span class="col text-light text-center align-bottom col-xs-12">Copyright © Todos los Derechos Reservados</span>
-                <ul class="footerInfo col-auto list-unstyled text-right col-xs-12">
+                <ul class="list-unstyled text-right align-right col-6 col-xs-12">
                     <li><a href="mailto:info@panu.com.ar" class="text-light"><i class="icon ion-md-mail"></i> info@panu.com.ar</a></li>
                     <li><a href="tel:+541147434734" class="text-light"><i class="icon ion-md-call"></i> +54 11 4743-4734</a></li>
                     <li><a href="https://vignette.wikia.nocookie.net/simpsons/images/6/65/800px-742_Evergreen_Terrace.png/revision/latest?cb=20170101225756" class="text-light"><i class="icon ion-md-pin"></i> Av. Siempreviva 742,<br>Springfield</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul class="list-unstyled col-xs-12 text-light mx-auto align-bottom">
+                    <li class="">Copyright © Todos los Derechos Reservados</li>
                 </ul>
                 
             </div>
