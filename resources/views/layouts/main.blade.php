@@ -39,19 +39,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
               <a class="nav-link" href="{{route('home')}}">Inicio
-                <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
               <a class="nav-link" href="{{route('about')}}">Quienes somos</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('faq') ? 'active' : '' }}">
               <a class="nav-link" href="{{route('faq')}}">F.A.Q.</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+              <a class="nav-link" href="{{route('contact')}}">Contacto</a>
             </li>
           </ul>
         </div>

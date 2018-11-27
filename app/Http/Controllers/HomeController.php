@@ -45,4 +45,9 @@ class HomeController extends Controller
         ];
         return view('faq')->with('faqArr', $faqArr);
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }
