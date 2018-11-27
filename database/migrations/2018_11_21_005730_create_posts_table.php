@@ -21,7 +21,6 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('photopath')->nullable();
             $table->timestamps();
-
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
         });

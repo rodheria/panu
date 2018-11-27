@@ -35,7 +35,20 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'comment' => 'required'
+        ];
+
+        $messages = [
+            'required' => 'campo vacio'
+        ];
+    
+        $this->validate($request, $rules, $messages);
+
+        $comment = new Comment($request->all());
+
+        $comment->save();
+        return redirect()->back();
     }
 
     /**

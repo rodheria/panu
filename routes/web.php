@@ -34,3 +34,6 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
     Route::get('/{id}/edit', 'PostController@edit');
     Route::delete('/delete/{id}', 'PostController@destroy');
 });
+
+Route::post('/comments/store', 'CommentController@store');
+
