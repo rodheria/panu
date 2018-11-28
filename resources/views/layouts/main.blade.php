@@ -91,10 +91,10 @@
         <div class="container">
             <div class="row">
                 <ul class="list-unstyled col-6 col-xs-12">
-                    <li><a href="index.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Inicio</i></a></li>
-                    <li><a href="login.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Iniciar sesión</a></li>
-                    <li><a href="registro.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Registrarse</a></li>
-                    <li><a href="faq.php" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> F.A.Q</a></li>
+                    <li><a href="{{route('home')}}" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Inicio</i></a></li>
+                    <li><a href="{{route('about')}}" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Quienes somos</a></li>
+                    <li><a href="{{route('faq')}}" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> F.A.Q.</a></li>
+                    <li><a href="{{route('contact')}}" class="text-light"><i class="icon ion-md-arrow-dropright-circle"></i> Contacto</a></li>
                 </ul>
                 <ul class="list-unstyled text-right align-right col-6 col-xs-12">
                     <li><a href="mailto:info@panu.com.ar" class="text-light"><i class="icon ion-md-mail"></i> info@panu.com.ar</a></li>
