@@ -22,21 +22,28 @@
                 <input class="form-control" type="text" name="title">
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Selecciona Categoria</label>
-                <select class="form-control" name="category_id">
-                    @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
+            <select class="custom-select" name= "category_id"}>
+            @foreach($categories as $category)
+            <option value= "{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+            <option selected>Selecciona una categoria</option>
+            <option value="1">Quiero Adoptar</option>
+            <option value="2">Publicar una mascota perdida</option>
+            <option value="3"> Busco Hogar de transito</option>
+            </select>
+            
+                    
+                
             </div>
             <div class="form-group">
                 <label for="content"></label>
                 <textarea class="form-control" name="content" cols="30" rows="10"></textarea>
             </div>
 
-            <div class="form-group col-6">
-                <label for="file">Archivo (opcional)</label>
-                <input class="form-control" type="file" name="filepath">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                
             </div>
                 <input type="submit" class="btn btn-danger form-control col-6 offset-3">
         </form>
