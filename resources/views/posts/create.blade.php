@@ -23,13 +23,11 @@
             </div>
             <div class="form-group">
             <select class="custom-select" name= "category_id"}>
-            @foreach($categories as $category)
-            <option value= "{{ $category->id }}">{{ $category->name }}</option>
-            @endforeach
-            <option selected>Selecciona una categoria</option>
-            <option value="1">Quiero Adoptar</option>
-            <option value="2">Publicar una mascota perdida</option>
-            <option value="3"> Busco Hogar de transito</option>
+                <option selected disabled>Selecciona una categoria</option>
+                @foreach($categories as $category)
+                <option value= "{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            
             </select>
             
                     

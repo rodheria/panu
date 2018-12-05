@@ -51,15 +51,13 @@ class PostController extends Controller
 
         $this->validate($request, $rules, $messages);
 
-        $post = new Post($request->all());
-        
         if($request->file('filepath') !== null) {
             $file = $request->file('filepath')->store('uploads');
             $post->filepath = $file;
         }
-        
+        $post = new Post($request->all());
         $post->save();
-
+        
         return redirect('/posts/' . $post->id);
 
     
