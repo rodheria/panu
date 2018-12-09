@@ -22,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
 
     {{-- IONICONS --}}
     <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
@@ -45,6 +46,9 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('home')}}">Inicio</a>
+                </li>
+                <li class="nav-item {{ Request::is('posts') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('posts')}}">Posts</a>
                 </li>
                 <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('about')}}">Quienes somos</a>

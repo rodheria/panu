@@ -24,16 +24,16 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
+
+
 Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
-    
-    Route::get('/', 'PostController@index');
     Route::get('/create', 'PostController@create');
     Route::post('/create', 'PostController@store');
     Route::patch('/edit/{id}', 'PostController@update');
-    Route::get('/{id}', 'PostController@show');
     Route::get('/{id}/edit', 'PostController@edit');
     Route::delete('/delete/{id}', 'PostController@destroy');
 });
 
 Route::post('/comments/store', 'CommentController@store');
-
+Route::get('/posts/{id}', 'PostController@show');
+Route::get('/posts', 'PostController@index')->name('posts');
