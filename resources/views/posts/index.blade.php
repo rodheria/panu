@@ -31,7 +31,7 @@
             </div>
             <div class="card-footer text-muted">
               Posted on {{$post->create_at}} by
-              <a href="#">{{$post->user->name}}</a>
+            <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a>
             </div>
           </div>
           {{-- End Blog Post --}}

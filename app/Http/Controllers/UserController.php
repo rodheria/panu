@@ -46,8 +46,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $posts = User::find($id)->posts()->get();
-        return view('users.profile')->with('posts', $posts);
+        $user = User::find($id)->first();
+        $posts = $user->posts()->get();
+        return view('users.profile')->with('user', $user)->with('posts', $posts);
     }
 
     /**
