@@ -14,21 +14,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory(User::class)->times(20)->create();
-        $categories = factory(Category::class)->times(5)->create();
-        $posts = factory(Post::class)->times(50)->create([
-            'user_id' => $users->random(),
-            'category_id' => $categories->random()
-        ]);
+        $users = factory(App\User::class, 50)->create();
+
+        $posts = factory(App\Post::class, 100)->create();
 
 
-        // $movies->each( function($movie) use ($actors) {
-        //     // $movie es una instancia de Movie
-        //     // actors() es un metodo del modelo Movie (belongsToMany())
-
-        //     // $actors es una collection, y random(3) devuelve una collection de 3 actores
-
-        //     $movie->actors()->saveMany($actors->random(3));
+        
+        // factory(App\Post::class, 50)->create()->each(function ($post) {
+        //     $post->user()->save(factory($users->random(1)->first()->id)->make());
         // });
+
+        // $posts = factory(App\Post::class, 5)->create()->each(function ($post) {
+        //         dd($post);
+                
+        //         // $post->user()->save(factory(App\User::class)->make());
+        //     });
+
+        // foreach($posts as $post){
+        //     $post->user()->associate($users->random(1)->first());
+            
+        //     $product->save();
+        // }
     }
 }

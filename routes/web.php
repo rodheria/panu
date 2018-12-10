@@ -24,7 +24,7 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
-
+Route::get('/user/{id}', 'UserController@show');
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
     Route::get('/create', 'PostController@create');
