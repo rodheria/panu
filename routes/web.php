@@ -34,6 +34,6 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
     Route::delete('/delete/{id}', 'PostController@destroy');
 });
 
-Route::post('/comments/store', 'CommentController@store');
+Route::post('/comments/store/{id}', 'CommentController@store')->middleware('auth');
 Route::get('/posts/{id}', 'PostController@show');
 Route::get('/posts', 'PostController@index')->name('posts');

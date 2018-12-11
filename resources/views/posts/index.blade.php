@@ -25,7 +25,7 @@
         <div class="card mb-4">
             <img class="card-img-top" src="http://placehold.it/750x500" alt="Card image cap">
             <div class="card-body">
-              <h2 class="card-title">{{$post->title}}</h2>
+              <h2 class="card-title"><a class="text-dark" href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
               <p class="card-text">{{ str_limit($post->content, 100)}}</p>
               <a href="/posts/{{$post->id}}" class="btn btn-primary">Leer más!</a>
             </div>

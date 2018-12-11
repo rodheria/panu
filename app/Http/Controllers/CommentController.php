@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
+use App\Post;
 
 class CommentController extends Controller
 {
@@ -33,21 +34,32 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
         $rules = [
             'comment' => 'required'
         ];
 
         $messages = [
-            'required' => 'campo vacio'
+            'required' => 'El comentario no puede estar en blanco.'
         ];
     
         $this->validate($request, $rules, $messages);
 
-        $comment = new Comment($request->all());
+        $post = Post::find($id);
+        $userid = \Auth::user()->id;
 
-        $comment->save();
+        $comment = Comment::create([
+            'comment' => $request->comment,
+            'user_id' => \Auth::user()->id,
+            'post_id' => $post->id
+        ]);
+        
+        
+
+        $post->comments()->save($comment)->user();
+
+        // dd($post->comment);
         return redirect()->back();
     }
 

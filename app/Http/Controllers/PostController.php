@@ -72,7 +72,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('posts.show')->with('post', $post);
+        $comments = $post->comments()->get();
+
+        return view('posts.show')->with('post', $post)->with('comments', $comments);
     }
 
     /**
@@ -83,7 +85,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-         $post = Post::find($id);
+        $post = Post::find($id);
         $categories = Category::all();
         return view('posts.edit')->with('post', $post)->with('categories', $categories);
     }
