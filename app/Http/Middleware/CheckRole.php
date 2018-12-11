@@ -17,8 +17,7 @@ class CheckRole
     {
         if(auth()->user()->role !== 9){
             return redirect('/home');
-
-    }
-    return $next($request);    
+        }
+        return $next($request);    
     }
 }
