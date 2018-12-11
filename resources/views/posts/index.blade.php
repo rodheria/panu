@@ -23,15 +23,14 @@
         @forelse ($posts as $post)
             <!-- Blog Post -->
         <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x500" alt="Card image cap">
+            <a href="/posts/{{$post->id}}"><img class="card-img-top" src="http://placehold.it/750x500" alt="Card image cap"></a>
             <div class="card-body">
               <h2 class="card-title"><a class="text-dark" href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
               <p class="card-text">{{ str_limit($post->content, 100)}}</p>
               <a href="/posts/{{$post->id}}" class="btn btn-primary">Leer más!</a>
             </div>
             <div class="card-footer text-muted">
-              Posted on {{$post->create_at}} by
-            <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a>
+              Posteado el {{$post->created_at}} por <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a>
             </div>
           </div>
           {{-- End Blog Post --}}
