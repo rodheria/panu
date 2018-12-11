@@ -14,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $categories = ["Buscado", "Encontrado", "En adopcion", "En transito"];
+        
+        foreach($categories as $category){
+            DB::table('categories')->insert(['name' => $category]);
+        }
+
         $users = factory(App\User::class, 50)->create();
         $posts = factory(App\Post::class, 100)->create();
 

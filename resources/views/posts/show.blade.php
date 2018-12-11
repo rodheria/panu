@@ -17,29 +17,23 @@
 
     <div class="row">
         <div class="col-sm-10 offset-sm-1 mb-2">
-            <h3>Comentarios:</h3>
-            <ul>
+            <h3 class="pb-2">Comentarios:</h3>
                 @forelse ($comments as $comment)
                     {{-- <p class="py-0"><a href="/user/{{$comment->user()->first()->id}}">{{ $comment->user()->first()->name }}</a> dijo:</p>
                     <p class="">{{$comment->comment}}</p> --}}
-
-                    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-                    {{-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> --}}
-                    {{-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
-                    <!------ Include the above in your HEAD tag ---------->
                     
-                    <div class="container">
+                    <div class="container pb-4">
                         <div class="row">
                             <div class="col-sm-1">
-                                <div class="thumbnail">
-                                    <a href="/user/{{$comment->user()->first()->id}}"><img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a>
+                                <div class="img-thumbnail">
+                                    <a href="/user/{{$comment->user()->first()->id}}"><img class="img-fluid user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a>
                                 </div><!-- /thumbnail -->
                             </div><!-- /col-sm-1 -->
                     
                             <div class="col-sm-5">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                            <a class="text-dark" href="/user/{{$comment->user()->first()->id}}"><strong>{{ $comment->user()->first()->name }}</strong></a> <span class="text-muted">commented 5 days ago</span>
+                                            <a class="text-dark" href="/user/{{$comment->user()->first()->id}}"><strong>{{ $comment->user()->first()->name }}</strong></a> <span class="text-muted">commented 5 days ago:</span>
                                     </div>
                                     <div class="panel-body">
                                         {{$comment->comment}}
@@ -48,9 +42,6 @@
                             </div><!-- /col-sm-5 -->
                         </div><!-- /row -->
                     </div><!-- /container -->
-
-
-
 
 
                 @empty
