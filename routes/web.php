@@ -27,7 +27,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name
 Route::get('/user/{id}', 'UserController@show');
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function() {
-    Route::get('/create', 'PostController@create');
+    Route::get('/create', 'PostController@create')->name('createpost');
     Route::post('/create', 'PostController@store');
     Route::patch('/edit/{id}', 'PostController@update');
     Route::get('/{id}/edit', 'PostController@edit');

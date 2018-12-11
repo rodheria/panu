@@ -9,7 +9,7 @@
       <h1 class="display-4 font-weight-bold text-light text-center">Bienvenido a Panu!</h1>
       <h3 class=" text-light text-center ">Entre todos podemos ayudar a reencontrar a las mascotas con sus dueños, es por eso que creamos Panu, un sitio donde vas a poder encontrar tu mascota con la ayuda de la gente.</h3>
       <div class="text-center mt-5">
-        <a href="#" class="btn btn-light btn-lg text-center">Ver busquedas activas</a>
+        <a href="{{route('posts')}}" class="btn btn-light btn-lg text-center">Ver busquedas activas</a>
       </div>
     </header>
 

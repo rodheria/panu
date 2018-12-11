@@ -23,11 +23,11 @@
         @forelse ($posts as $post)
             <!-- Blog Post -->
         <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x200" alt="Card image cap">
+            <img class="card-img-top" src="http://placehold.it/750x500" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">{{$post->title}}</h2>
-              <p class="card-text">{{$post->content}}</p>
-              <a href="#" class="btn btn-primary">Read More</a>
+              <p class="card-text">{{ str_limit($post->content, 100)}}</p>
+              <a href="/posts/{{$post->id}}" class="btn btn-primary">Leer más!</a>
             </div>
             <div class="card-footer text-muted">
               Posted on {{$post->create_at}} by
@@ -81,11 +81,14 @@
         </div>
 
         <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
+        <div class="my-4">
+          {{-- <h5 class="card-header"></h5> --}}
+                <a class="btn btn-outline-primary w-100" href="{{route('createpost')}}">
+                    Crear post
+                </a>
+          {{-- <div class="card-body">
             You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-          </div>
+          </div> --}}
         </div>
 
       </div>

@@ -26,7 +26,7 @@
 
     {{-- IONICONS --}}
     <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
-
+    <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
