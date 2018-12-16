@@ -37,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-panu bottom-shadow">
       <div class="container">
-        <a class="navbar-brand font-weight-bold" href="{{route('home')}}">PANU</a>
+        <a class="navbar-brand font-weight-bold" href="{{route('home')}}"><img class="" width="18" src="{{asset('images/logos/paw-white.png')}}" alt=""> PANU</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,7 +57,7 @@
                     <a class="nav-link" href="{{route('faq')}}">F.A.Q.</a>
                 </li>
                 <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="{{ route('contact') }}">Contacto</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

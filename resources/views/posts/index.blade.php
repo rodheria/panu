@@ -45,7 +45,7 @@
       <div class="col-md-4">
 
         <!-- Search Widget -->
-        <div class="card my-4">
+        {{-- <div class="card my-4">
           <h5 class="card-header">Search</h5>
           <div class="card-body">
             <div class="input-group">
@@ -55,19 +55,22 @@
               </span>
             </div>
           </div>
-        </div>
+        </div> --}}
 
         <!-- Categories Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
+          <h5 class="card-header">Categorias</h5>
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
-                    @forelse ($categories as $category)
+                    @forelse ($categories as $category)      
+                    <div class="">
                         <li>
+                            <span class="badge badge-primary p-2 my-1 ml-auto">{{count($category->posts)}}</span>
                             <a href="#">{{$category->name}}</a>
                         </li>      
+                    </div>
                     @empty
                         
                     @endforelse
