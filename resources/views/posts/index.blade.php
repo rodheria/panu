@@ -72,7 +72,9 @@
                         </li>      
                     </div>
                     @empty
-                        
+                        <div class="alert alert-primary" role="alert">
+                            <strong>No hay categorias</strong>
+                        </div>
                     @endforelse
                   
 
@@ -84,13 +86,9 @@
 
         <!-- Side Widget -->
         <div class="my-4">
-          {{-- <h5 class="card-header"></h5> --}}
                 <a class="btn btn-outline-primary w-100" href="{{route('createpost')}}">
                     Crear post
                 </a>
-          {{-- <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-          </div> --}}
         </div>
 
       </div>

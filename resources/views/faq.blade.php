@@ -4,9 +4,7 @@
     <div class="container">
 
       <!-- Page Heading -->
-        <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-        </h1>
+        <h1 class="my-4">Preguntas frequentes</h1>
 
         <div class="row">
             @foreach ($faqArr as $question => $answer)
