@@ -38,6 +38,8 @@ Route::post('/comments/store/{id}', 'CommentController@store')->middleware('auth
 Route::get('/posts/{id}', 'PostController@show');
 Route::get('/posts', 'PostController@index')->name('posts');
 
+Route::get('/category/{id}', 'CategoryController@show')->name('category');
+
 Route::group(['prefix' => 'backoffice', 'middleware' => ['auth', 'checkrole']], function() {
     Route::get('/', 'BackofficeController@index');
     Route::get('/carga_categorias', 'BackofficeController@create_category');
