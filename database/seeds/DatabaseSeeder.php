@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
         }
 
         $users = factory(App\User::class, 50)->create();
-        $posts = factory(App\Post::class, 100)->create();
-        $comments = factory(App\Comment::class, 300)->create();
+        $posts = factory(App\Post::class, 500)->create();
+        $comments = factory(App\Comment::class, 1000)->create();
 
         
         // factory(App\Post::class, 50)->create()->each(function ($post) {
