@@ -17,12 +17,12 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->longText('comment');
             $table->string('filepath')->nullable();
-            $table->unsignedInteger('post_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('post_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('set null');
         });
     }
 
