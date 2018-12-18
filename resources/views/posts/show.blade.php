@@ -1,6 +1,7 @@
 @extends('layouts.main') 
 
 @section('content')
+{{-- {{ dd(asset($post->filepath)) }} --}}
 <div class="container py-2">
     <div class="row">
         <div class="col-sm-1">
@@ -9,8 +10,8 @@
 
         <div class="blog-post card py-3 px-4 col-xs-10 col-sm-10 align-self-center my-4">
             <h2 class="blog-post-title">{{ $post->title }}</h2>
-                <p class="blog-post-meta"> {{ $post->created_at }} - Autor: <a href="/user/{{$post->user->id}}">{{ $post->user->name }}</a></p>
-            <img class="card-img-top" src="http://placehold.it/750x500" alt="Card image cap">
+            <p class="blog-post-meta"> {{ $post->created_at }} - Autor: <a href="/user/{{$post->user->id}}">{{ $post->user->name }}</a></p>
+            <img class="card-img-top" src="{{asset($post->filepath)}}" alt="Imagen del post">
             <p class="pt-4">{{ $post->content }}</p>
         </div>
     </div>

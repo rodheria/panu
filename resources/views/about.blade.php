@@ -21,7 +21,7 @@
 		  </div>
 		  <div class="col-lg-4 col-sm-6 text-center mb-4 mx-auto">
 			<img class="rounded-circle img-fluid d-block mx-auto" src="{{asset('images/about/geo.jpg')}}" width="200" alt=""> 
-			<h3>Georgina Ramp</h3>
+			<h3>Georgina Rampinini</h3>
 			<h4>Programadora</h4>
 			<p><a href="https://github.com/georamp/" target="_blank">Github</a></p>
 		  </div>

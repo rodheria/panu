@@ -41,21 +41,25 @@ class PostController extends Controller
             'title' => 'required',
             'category_id' => 'required',
             'content' => 'required',
-            'filepath' => 'mimetypes:application/zip'
+            'filepath' => 'mimes:jpeg,png,bmp,tiff |max:4096'
         ];
 
         $messages = [
-            'required' => 'el campo :attribute es requerido'
+            'required' => 'el campo :attribute es requerido',
+            'mimes' => 'Solo imagenes jpeg, png, bmp, tiff son aceptadas.'
         ];
        
 
         $this->validate($request, $rules, $messages);
 
+        $post = new Post($request->all());
+
         if($request->file('filepath') !== null) {
-            $file = $request->file('filepath')->store('uploads');
+            $file = $request->file('filepath')->store('public/uploads');
+            $file = str_replace('public', 'storage', $file);
             $post->filepath = $file;
         }
-        $post = new Post($request->all());
+        
         $post->save();
         
         return redirect('/posts/' . $post->id);

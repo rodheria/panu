@@ -23,7 +23,7 @@
         @forelse ($posts as $post)
             <!-- Blog Post -->
         <div class="card mb-4">
-            <a href="/posts/{{$post->id}}"><img class="card-img-top" src="http://placehold.it/750x500" alt="Card image cap"></a>
+        <a href="/posts/{{$post->id}}"><img class="card-img-top" src="{{$post->filepath}}" alt="Card image cap"></a>
             <div class="card-body">
               <h2 class="card-title"><a class="text-dark" href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
               <p class="card-text">{{ str_limit($post->content, 100)}}</p>

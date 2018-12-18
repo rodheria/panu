@@ -42,6 +42,7 @@ Route::get('/category/{id}', 'CategoryController@show')->name('category');
 
 Route::group(['prefix' => 'backoffice', 'middleware' => ['auth', 'checkrole']], function() {
     Route::get('/', 'BackofficeController@index');
+    Route::delete('/user/delete/{id}', 'UserController@destroy');
     Route::get('/carga_categorias', 'BackofficeController@create_category');
     Route::post('/carga_categorias', 'BackofficeController@store_category');
 });

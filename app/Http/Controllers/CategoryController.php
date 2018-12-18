@@ -48,7 +48,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::find($id);
-        $posts = $category->posts()->paginate(10);
+        $posts = $category->posts()->orderBy('created_at', 'desc')->paginate(10);
 
         return view('categories.show')->with('category', $category)->with('posts', $posts);
     }

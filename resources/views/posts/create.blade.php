@@ -1,7 +1,7 @@
 @extends('layouts.main') 
 @section('content')
 
-<div class="container">
+<div class="container py-4">
 
     @if(count($errors) > 0)
     <div class="row col-6 offset-3">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <input name="filepath" type="file" class="custom-file-input" id="customFileLang" lang="es">
                 <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                 
             </div>
