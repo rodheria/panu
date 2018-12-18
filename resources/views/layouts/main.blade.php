@@ -63,7 +63,7 @@
             <ul class="navbar-nav ml-auto">
                 @if(Auth::check())
                     <li class="nav-item {{ Request::is('register') ? 'active' : '' }}">
-                        <span class="nav-link text-light">Sesion iniciada como: <a class="font-weight-bold text-white" href="#PERFIL">{{Auth::user()->name}}</a></span>
+                        <span class="nav-link text-light">Sesion iniciada como: <a class="font-weight-bold text-white" href="/user/{{Auth::user()->id}}">{{Auth::user()->name}}</a></span>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{route('logout')}}">Cerrar sesión</a>

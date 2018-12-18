@@ -34,7 +34,7 @@
                             <div class="col-sm-5">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                            <a class="text-dark" href="/user/{{$comment->user()->first()->id}}"><strong>{{ $comment->user()->first()->name }}</strong></a> <span class="text-muted">commented 5 days ago:</span>
+                                    <a class="text-dark" href="/user/{{$comment->user()->first()->id}}"><strong>{{ $comment->user()->first()->name }}</strong></a> <span class="text-muted">{{$comment->created_at}}</span>
                                     </div>
                                     <div class="panel-body">
                                         {{$comment->comment}}
