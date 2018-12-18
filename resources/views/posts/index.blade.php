@@ -68,7 +68,7 @@
                     <div class="">
                         <li>
                             <span class="badge badge-primary p-2 my-1 ml-auto">{{count($category->posts)}}</span>
-                            <a href="#">{{$category->name}}</a>
+                        <a href="/category/{{$category->id}}">{{$category->name}}</a>
                         </li>      
                     </div>
                     @empty
