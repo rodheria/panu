@@ -6,6 +6,7 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron bg-panu mt-4">
+      <img class="offset-4 offset-md-5 col-md-2 col-4 pb-4 pt-0" width="" src="{{asset('images/logos/paw-white.png')}}" alt="">
       <h1 class="display-4 font-weight-bold text-light text-center">Bienvenido a Panu!</h1>
       <h3 class=" text-light text-center ">Entre todos podemos ayudar a reencontrar a las mascotas con sus dueños, es por eso que creamos Panu, un sitio donde vas a poder encontrar tu mascota con la ayuda de la gente.</h3>
       <div class="text-center mt-5">
