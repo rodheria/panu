@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'last_name', 'email', 'bio', 'genre', 'birthdate', 'province', 'city', 'avatar', 'password',
     ];
 
     /**
@@ -34,5 +34,9 @@ class User extends Authenticatable
 
     public function comments(){
         return $this->hasMany(Comment::class);
+    }
+
+    public function fullName(){
+        return $this->name . " " . $this->last_name;
     }
 }

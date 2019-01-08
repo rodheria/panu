@@ -29,7 +29,7 @@
     <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
 
   <body>
