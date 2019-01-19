@@ -21,9 +21,9 @@
 		  </div>
 		  <div class="col-lg-4 col-sm-6 text-center mb-4 mx-auto">
 			<img class="rounded-circle img-fluid d-block mx-auto" src="{{asset('images/about/fran.jpg')}}" width="200" alt=""> 
-			<h3>Georgina Rampinini</h3>
-			<h4>Programadora</h4>
-			<p><a href="https://github.com/georamp/" target="_blank">Github</a></p>
+			<h3>Francisco Marienhoff</h3>
+			<h4>Programador</h4>
+			<p><a href="https://github.com/franm91/" target="_blank">Github</a></p>
 		  </div>
 		</div>
 
