@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-
+use Faker\Provider\DateTime as DateTime;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -21,7 +21,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'bio' => $faker->paragraph(),
         'genre' => random_int(0, 3),
-        'birthdate' => dateTimeThisCentury($max = 'now', $timezone = null),
+        'birthdate' => DateTime::dateTimeThisCentury($max = 'now', $timezone = null),
         'province' => random_int(0, 23),
         'city' => random_int(0, 5),
         'email_verified_at' => now(),
