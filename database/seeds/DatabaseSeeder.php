@@ -32,8 +32,8 @@ class DatabaseSeeder extends Seeder
             DB::table('categories')->insert(['name' => $category]);
         }
 
-        $users = factory(App\User::class, 50)->create();
-        $posts = factory(App\Post::class, 500)->create();
+        $users = factory(App\User::class, 20)->create();
+        $posts = factory(App\Post::class, 325)->create();
         $comments = factory(App\Comment::class, 1000)->create();
     }
 }
