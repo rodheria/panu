@@ -35,22 +35,5 @@ class DatabaseSeeder extends Seeder
         $users = factory(App\User::class, 50)->create();
         $posts = factory(App\Post::class, 500)->create();
         $comments = factory(App\Comment::class, 1000)->create();
-
-        
-        // factory(App\Post::class, 50)->create()->each(function ($post) {
-        //     $post->user()->save(factory($users->random(1)->first()->id)->make());
-        // });
-
-        // $posts = factory(App\Post::class, 5)->create()->each(function ($post) {
-        //         dd($post);
-                
-        //         // $post->user()->save(factory(App\User::class)->make());
-        //     });
-
-        // foreach($posts as $post){
-        //     $post->user()->associate($users->random(1)->first());
-            
-        //     $product->save();
-        // }
     }
 }

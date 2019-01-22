@@ -77,11 +77,10 @@
             </div>    
         @endauth
             <div class="alert col-sm-10 offset-sm-1">
-                <p>Debes <a href="{{ route('login') }}">iniciar sesión</a> o <a href="{{ route('register') }}">registrarte</a> para poder hacer comentarios.</p>
             </div>
-        @guest
+            @guest
             <div class="col-sm-10 offset-sm-1">
-
+                    <p>Debes <a href="{{ route('login') }}">iniciar sesión</a> o <a href="{{ route('register') }}">registrarte</a> para poder hacer comentarios.</p>
             </div>
         @endguest
     </div>
