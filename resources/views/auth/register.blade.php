@@ -73,10 +73,10 @@
                             <div class="col-md-6">
                                 <select id="genre" type="genre" class="form-control {{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre" value="">
                                     <option selected disabled>Seleccione genero...</option>
-                                    <option value="0">No especifica</option>
-                                    <option value="1">Femenino</option>
-                                    <option value="2">Masculino</option>
-                                    <option value="3">Otros</option>
+                                    <option value="1" {{ old('genre') == 1 ? 'selected' : '' }}>No especifica</option>
+                                    <option value="2" {{ old('genre') == 2 ? 'selected' : '' }}>Femenino</option>
+                                    <option value="3" {{ old('genre') == 3 ? 'selected' : '' }}>Masculino</option>
+                                    <option value="4" {{ old('genre') == 4 ? 'selected' : '' }}>Otros</option>
                                 </select>                                
 
                                 <div class="text-danger" role="alert">
